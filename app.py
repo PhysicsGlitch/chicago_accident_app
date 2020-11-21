@@ -6,12 +6,11 @@ from joblib import load
 import pandas as pd
 
 app = Flask(__name__)
-GoogleMaps(app, key= "AIzaSyBpGBmyN_wirqJgtFleNjKqPSGoe2A11I4"
-)
+GoogleMaps(app, key="AIzaSyBpGBmyN_wirqJgtFleNjKqPSGoe2A11I4")
+
 
 @app.route("/")
 def map_created_in_view():
-
     gmap = Map(
         identifier="gmap",
         varname="gmap",
@@ -24,8 +23,8 @@ def map_created_in_view():
         },
         style="height:400px;width:600px;margin:0;",
     )
-
     return render_template("index.html", gmap=gmap)
+
 
 @app.route("/data", methods=["POST", "GET"])
 def postdata():
@@ -66,6 +65,7 @@ def postdata():
         return render_template("data.html", form_data=form_data, start_location=start_location,
                                end_location=end_location, start_long=start_long, start_lat=start_lat,
                                hit_n_run=hit_n_run, damage=damage)
+
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
