@@ -6,7 +6,7 @@ from joblib import load
 import pandas as pd
 
 app = Flask(__name__)
-GoogleMaps(app, key= "AIzaSyDom1FJvz41eWHt9r7e8_tq93_w7Fg8sQA"
+GoogleMaps(app, key= "AIzaSyBpGBmyN_wirqJgtFleNjKqPSGoe2A11I4"
 )
 
 @app.route("/")
